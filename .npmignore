@@ -42,5 +42,4 @@ bower_components
 
 # Compiled
 build
-lib
-styles
+src
