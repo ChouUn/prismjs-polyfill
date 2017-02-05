@@ -15,7 +15,8 @@ OR
 ```jsx
 import 'prismjs-polyfill/styles/index.scss';
 ```
-The latter need **node-sass** and **sass-loader** in Webpack.
+The former needs **style-loader** and **css-loader**,
+and the latter also needs **node-sass** and **sass-loader** in Webpack.
 
 ### Example
 
@@ -24,20 +25,24 @@ const theme = 'prism-twilight';
 const lang = 'cpp';
 
 return `
-    <pre class=${theme}>
-        <code class="language-${lang}">
-            ${hljs.highlight(lang, code, true).value}
-        </code>
-    </pre>
+    <div class=${theme}>
+        <pre>
+            <code class="language-${lang}">
+                ${hljs.highlight(lang, code, true).value}
+            </code>
+        </pre>
+    </div>
 `;
 ```
 It will render to :
 ```html
-<pre class="prism-twilight">
-    <code class="language-cpp">
-        ...
-    </code>
-</pre>
+<div class="prism-twilight">
+    <pre class=" language-cpp">
+        <code class=" language-cpp">
+            ...
+        </code>
+    </pre>
+</div>
 ```
 
 ### About module

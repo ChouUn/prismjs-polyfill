@@ -1,4 +1,12 @@
-const langs = [
+const base = [
+  'markup',
+  'css',
+  'clike',
+  'javascript',
+];
+
+const extra = [
+  // be depended
   'c',
   'ruby',
 
@@ -118,4 +126,5 @@ const langs = [
   'yaml',
 ];
 
-export default langs;
+export { base, extra };
+export default Object.assign({}, base, extra);

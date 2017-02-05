@@ -1,5 +1,5 @@
 import fs from 'fs';
-import langs from './langs';
+import { extra as langs } from './langs';
 import themes from './themes';
 
 function getPrism() {
