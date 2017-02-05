@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { extra as langs } from './langs';
-import themes from './themes';
+import themes, { themeMapping } from './themes';
 
 function getPrism() {
   let result = `import Prism from 'prismjs';\n`;
@@ -19,8 +19,8 @@ function getStyles() {
 
   themes.forEach(function (theme) {
     let tail = `
-.${theme} {
-  @import "~prismjs/themes/${theme}";
+.prism-${theme} {
+  @import "~prismjs/themes/${themeMapping[theme]}";
   @include common;
 }`;
     result += tail;
