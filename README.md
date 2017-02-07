@@ -18,6 +18,12 @@ import 'prismjs-polyfill/styles/index.scss';
 The former needs **style-loader** and **css-loader**,
 and the latter also needs **node-sass** and **sass-loader** in Webpack.
 
+```jsx
+import Prism, { languages, themes } from 'prismjs-polyfill';
+```
+It will get the Prism supporting all languages, an Array of languages, and an Array of themes.
+
+
 ### Example
 
 ```jsx
@@ -45,12 +51,73 @@ It will render to :
 </div>
 ```
 
-### About module
+### Helper
 
-```jsx
-import Prism, { languages, themes } from 'prismjs-polyfill';
+If it need css like themes and plugins, you should add the class in `div`.  
+Others is same as origin.
+
+### Plugins
+
+Now, it support: 
+
+* line-highlight
+* line-numbers
+* show-invisibles
+* file-highlight
+
+#### line-highlight
+
+Obviously, this only works on code blocks (`<pre><code>`) and not for inline code.
+
+You specify the lines to be highlighted through the `data-line` attribute on the `<pre>` element.
+
+```html
+<div class="prism-default prism-line-highlight">
+    <pre data-line="1,4-5">
+        <code class="language-xxxx">
+            ...
+        </code>
+    </pre>
+</div>
 ```
-It will get the Prism supporting all languages, an Array of languages, and an Array of themes.
+
+#### line-numbers
+
+```html
+<div class="prism-default prism-line-numbers">
+    <pre class="line-numbers">
+        <code class="language-xxxx">
+            ...
+        </code>
+    </pre>
+</div>
+```
+
+#### show-invisibles
+
+```html
+<div class="prism-default prism-show-invisibles">
+    <pre>
+        <code class="language-xxxx">
+            ...
+        </code>
+    </pre>
+</div>
+```
+
+#### file-highlight
+
+Use the `data-src` attribute on empty `<pre>` elements.
+
+```html
+<div class="prism-default">
+    <pre data-src="https://raw.githubusercontent.com/ChouUn/CodeWorld/master/History/zucc/zucc1647.cpp">
+        <code class="language-cpp">
+            ...
+        </code>
+    </pre>
+</div>
+```
 
 ## Build
 
