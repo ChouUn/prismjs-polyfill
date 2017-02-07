@@ -115,4 +115,8 @@ import 'prismjs/components/prism-vim';
 import 'prismjs/components/prism-wiki';
 import 'prismjs/components/prism-xojo';
 import 'prismjs/components/prism-yaml';
+import 'prismjs/plugins/line-highlight/prism-line-highlight';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import 'prismjs/plugins/show-invisibles/prism-show-invisibles';
+import 'prismjs/plugins/file-highlight/prism-file-highlight';
 export default Prism;

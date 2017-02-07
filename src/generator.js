@@ -5,8 +5,20 @@ import themes, { themeMapping } from './themes';
 function getPrism() {
   let result = `import Prism from 'prismjs';\n`;
 
-  langs.forEach(function(lang) {
-    let imp = `import 'prismjs/components/prism-${lang}';\n`;
+  langs.forEach(function (lang) {
+    const imp = `import 'prismjs/components/prism-${lang}';\n`;
+    result += imp;
+  });
+
+  const plugins = [
+    'line-highlight',
+    'line-numbers',
+    'show-invisibles',
+    'file-highlight'
+  ];
+
+  plugins.forEach(function (plugin) {
+    const imp = `import 'prismjs/plugins/${plugin}/prism-${plugin}';\n`;
     result += imp;
   });
 
@@ -18,12 +30,26 @@ function getStyles() {
   let result = `@mixin common {}`;
 
   themes.forEach(function (theme) {
-    let tail = `
+    const tail = `
 .prism-${theme} {
   @import "~prismjs/themes/${themeMapping[theme]}";
   @include common;
 }`;
     result += tail;
+  });
+
+  const plugins = [
+    'line-highlight',
+    'line-numbers',
+    'show-invisibles',
+  ];
+
+  plugins.forEach(function (plugin) {
+    const imp = `
+.prism-${plugin} {
+  @import "~prismjs/plugins/${plugin}/prism-${plugin}";
+}`;
+    result += imp;
   });
 
   return result;

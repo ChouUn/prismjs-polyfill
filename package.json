@@ -1,6 +1,6 @@
 {
   "name": "prismjs-polyfill",
-  "version": "0.1.3",
+  "version": "0.2.0",
   "description": "A polyfill for prism.js to import all languages and isolate various syntax themes because of global style pollution.",
   "main": "lib/index.js",
   "scripts": {
