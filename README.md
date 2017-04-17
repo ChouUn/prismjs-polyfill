@@ -122,7 +122,7 @@ Use the `data-src` attribute on empty `<pre>` elements.
 ## Build
 
 ```shell
-$ npm run dev
+$ npm run build
 ```
 
 ## Publish

@@ -1,11 +1,11 @@
-const base = [
+const base: string[] = [
   'markup',
   'css',
   'clike',
   'javascript',
 ];
 
-const extra = [
+const extra: string[] = [
   // be depended
   'c',
   'ruby',
@@ -126,5 +126,7 @@ const extra = [
   'yaml',
 ];
 
+const result: string[] = [].concat(base, extra)
+
 export { base, extra };
-export default [].concat(base, extra);
+export default result;

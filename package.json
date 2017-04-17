@@ -1,12 +1,15 @@
 {
   "name": "prismjs-polyfill",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A polyfill for prism.js to import all languages and isolate various syntax themes because of global style pollution.",
   "main": "lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "predev": "babel-node utils/generator.js --presets=es2015",
-    "dev": "webpack --progress --colors --profile && babel src/ --out-dir lib/ --presets=es2015",
-    "rls": "npm run dev && npm publish"
+    "prepare": "tsc utils/generator.ts --outDir build/",
+    "generate": "node ./build/utils/generator.js",
+    "compile": "tsc && node-sass lib/index.scss lib/index.css include-path ./node_modules/",
+    "build": "npm run prepare && npm run generate && npm run compile",
+    "rls": "npm run build && npm publish"
   },
   "repository": {
     "type": "git",
@@ -34,12 +37,9 @@
     "prismjs": "^1.6.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.22.2",
-    "babel-preset-es2015": "^6.22.0",
-    "css-loader": "^0.26.1",
-    "extract-text-webpack-plugin": "^2.0.0-rc.3",
+    "@types/node": "^7.0.12",
+    "@types/prismjs": "^1.6.1",
     "node-sass": "^4.5.0",
-    "sass-loader": "^4.1.1",
-    "webpack": "^2.2.1"
+    "typescript": "^2.3.0"
   }
 }

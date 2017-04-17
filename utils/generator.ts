@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 import {
   extra
 } from '../src/langs';
@@ -6,7 +6,7 @@ import themes from '../src/themes';
 import plugins from '../src/plugins';
 
 function getPrism() {
-  let result = `import Prism from 'prismjs';\n`;
+  let result = `import * as Prism from 'prismjs';\n`;
 
   extra.forEach((lang) => {
     const imp = `import 'prismjs/components/prism-${lang}';\n`;
@@ -32,7 +32,7 @@ function getStyles() {
     .forEach((theme) => {
       const tail = `
 .prism-${theme} {
-  @import "~prismjs/themes/${themes[theme]}";
+  @import "./node_modules/prismjs/themes/${themes[theme]}";
   @include common;
 }`;
       result += tail;
@@ -44,7 +44,7 @@ function getStyles() {
     .forEach((plugin) => {
       const imp = `
 .prism-${plugin} {
-  @import "~prismjs/plugins/${plugin}/prism-${plugin}";
+  @import "./node_modules/prismjs/plugins/${plugin}/prism-${plugin}";
 }`;
       result += imp;
     });
@@ -67,4 +67,4 @@ function exMakeDir(dirname) {
 
 exMakeDir('lib')
 fs.writeFileSync('./lib/index.scss', getStyles(), 'utf8');
-fs.writeFileSync('./src/prism.js', getPrism(), 'utf8');
+fs.writeFileSync('./src/prism.ts', getPrism(), 'utf8');

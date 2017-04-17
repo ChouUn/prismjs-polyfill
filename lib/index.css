@@ -1013,4 +1013,4 @@ green     #859900
   content: '\240A'; }
 
 .prism-show-invisibles .token.space:before {
-  content: '\B7'; }
+  content: '\00B7'; }

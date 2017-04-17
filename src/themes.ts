@@ -1,5 +1,5 @@
 
-const themes = {
+const themes: { [index: string]: string } = {
   'default': 'prism',
   'coy': 'prism-coy',
   'dark': 'prism-dark',
