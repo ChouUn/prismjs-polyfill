@@ -127,4 +127,4 @@ const extra = [
 ];
 
 export { base, extra };
-export default Object.assign({}, base, extra);
+export default [].concat(base, extra);

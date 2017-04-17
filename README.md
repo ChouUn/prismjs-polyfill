@@ -9,19 +9,19 @@ A polyfill for prism.js to import all languages and isolate various syntax theme
 ### Prepare
 
 ```jsx
-import 'prismjs-polyfill/styles/index.css';
+import 'prismjs-polyfill/lib/index.css';
 ```
 OR
 ```jsx
-import 'prismjs-polyfill/styles/index.scss';
+import 'prismjs-polyfill/lib/index.scss';
 ```
 The former needs **style-loader** and **css-loader**,
 and the latter also needs **node-sass** and **sass-loader** in Webpack.
 
 ```jsx
-import Prism, { languages, themes } from 'prismjs-polyfill';
+import Prism, { languages, themes, plugins } from 'prismjs-polyfill';
 ```
-It will get the Prism supporting all languages, an Array of languages, and an Array of themes.
+It will get the Prism supporting all languages, an Array of languages, an Object of themes, and an Object of plugins.
 
 
 ### Example
@@ -53,12 +53,12 @@ It will render to :
 
 ### Helper
 
-If it need css like themes and plugins, you should add the class in `div`.  
+If it need css like themes and plugins, you should add the class in `div`.
 Others is same as origin.
 
 ### Plugins
 
-Now, it support: 
+Now, it support:
 
 * line-highlight
 * line-numbers
@@ -122,13 +122,13 @@ Use the `data-src` attribute on empty `<pre>` elements.
 ## Build
 
 ```shell
-$ npm run build 
+$ npm run dev
 ```
 
 ## Publish
 
 ```shell
-$ npm run release
+$ npm run rls
 ```
 
 [link1]:   https://travis-ci.org/ChouUn/prismjs-polyfill.svg?branch=master

@@ -2,13 +2,13 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
   entry: {
-    index: './styles/index.scss',
+    index: './lib/index.scss',
   },
   output: {
-    filename: './build/empty.js',
+    filename: './lib/empty.js',
   },
   plugins: [
-    new ExtractTextPlugin('./styles/index.css'),
+    new ExtractTextPlugin('./lib/index.css'),
   ],
   module: {
     loaders: [

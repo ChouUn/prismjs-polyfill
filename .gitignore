@@ -41,6 +41,4 @@ bower_components
 .idea
 
 # Compiled
-build
-lib
-styles
+lib/empty.js
