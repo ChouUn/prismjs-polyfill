@@ -2,11 +2,12 @@ language: node_js
 node_js:
   - "5"
   - "6"
+  - "7"
 env:
   -
 before_script:
   - npm install
 script:
   - |
-    npm run build
+    npm run dev
 sudo: false  # Use container-based architecture
