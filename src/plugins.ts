@@ -5,4 +5,4 @@ const plugins: { [index: string]: boolean } = {
   'file-highlight': false,
 }
 
-export default plugins;
+export default plugins

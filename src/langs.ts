@@ -3,7 +3,7 @@ const base: string[] = [
   'css',
   'clike',
   'javascript',
-];
+]
 
 const extra: string[] = [
   // be depended
@@ -124,9 +124,9 @@ const extra: string[] = [
   'wiki',
   'xojo',
   'yaml',
-];
+]
 
 const result: string[] = [].concat(base, extra)
 
-export { base, extra };
-export default result;
+export { base, extra }
+export default result

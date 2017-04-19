@@ -10,4 +10,4 @@ const themes: { [index: string]: string } = {
   'twilight': 'prism-twilight',
 }
 
-export default themes;
+export default themes
